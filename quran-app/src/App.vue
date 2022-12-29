@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('https://api.alquran.cloud/v1/surah')
+    axios.get('http://api.alquran.cloud/v1/surah')
       .then(response => {
         this.suras = response.data.data
       })
@@ -59,7 +59,7 @@ export default {
     },
     querySpecificSura(suraNumber) {
       this.loading = true;
-      axios.get('https://api.alquran.cloud/v1/surah/' + suraNumber).then(response => {
+      axios.get('http://api.alquran.cloud/v1/surah/' + suraNumber).then(response => {
         console.log(response.data.data);
         this.currentSura = response.data.data;
         this.loading = false;
